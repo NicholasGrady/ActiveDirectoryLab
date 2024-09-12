@@ -1,7 +1,7 @@
 <h1>Active Directory Lab</h1>
 
 <h2>Description</h2>
-In this project, I set up a Windows Server and configured a root domain for Active Directory, also setting up DHCP and Remote Access in the process. I customized the network's IP address range for automatic assignment via the DHCP server. I also created multiple users and connected a second virtual machine as a client that allowed users to log in across the network. <br />
+In this project, I set up a Windows Server and configured a root domain for Active Directory.  While setting up this Windows server I also set up a DHCP server and Remote Access to allow for an internal network to be created. I customized the network's IP address range for automatic assignment via the DHCP server. I also created multiple users and connected a second virtual machine as a client that allowed users to log in across the network and verified that everything was working properly. <br />
 
 
 <h2>Utilities Used</h2>
