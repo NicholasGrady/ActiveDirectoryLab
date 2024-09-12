@@ -30,59 +30,59 @@ After Active Directory Domain Service was successfully installed, I opened the A
 <img src="https://i.imgur.com/pWKk9S9.png"/> 
 <br />
 <br />
-I edited the user Nicholas Grady to add to the Domain Admins group:
+I edited the user Nicholas Grady to add to the Domain Admins group: <br/>
  <img src="https://i.imgur.com/mtB8rd8.png"/> 
 <br />
 <br />
-Added the feature for allowing Remote Access into the Windows Server 2022
+Added the feature for allowing Remote Access into the Windows Server 2022 <br/>
  <img src="https://i.imgur.com/wkxmM4I.png"/> 
 <br />
 <br />
-Opened the Routing and Remote Access tool and configured and enabled routing and remote access:
+Opened the Routing and Remote Access tool and configured and enabled routing and remote access: <br/>
  <img src="https://i.imgur.com/zJiASeB.png"/> 
 <br />
 <br />
-I set up the Remote Access Server to use NAT so that the internal network can use the internet through the Domain Controller to access the internet.  All computers in the network will be set up with an internal network and reach through the Domain Controller for internet access: 
+I set up the Remote Access Server to use NAT so that the internal network can use the internet through the Domain Controller to access the internet as the Domain Controller is being used as the default gateway.  All computers in the network will be set up with an internal network and reach through the Domain Controller for internet access:  <br/>
  <img src="https://i.imgur.com/Ew8UxXC.png"/> 
 <br />
 <br />
-Adding in another feature of DHCP to allow for the DHCP server to give out internal IP addresses: 
+Adding in another feature of DHCP to allow for the DHCP server to give out internal IP addresses:  <br/>
  <img src="https://i.imgur.com/uH8eWz3.png"/> 
 <br />
 <br />
-After Installing the DHCP server, I opened the DHCP tool and added a new scope of IP addresses to be used for the internal network opening up IP ranges 172.16.0.100 to 172.16.0.200:
+After Installing the DHCP server, I opened the DHCP tool and added a new scope of IP addresses to be used for the internal network opening up IP ranges 172.16.0.100 to 172.16.0.200: <br/>
  <img src="https://i.imgur.com/INdydZv.png"/> 
 <br />
 <br />
-As a last step, I opened up Active Directory again to add another Organizational Unit and added a User group.  I populated this with new user accounts using randomized names and added a non-admin account under my name "ngrady" using the organization's user account naming policy of first name's first letter followed by the full last name for all accounts:
+As a last step, I opened up Active Directory again to add another Organizational Unit and added a User group.  I populated this with new user accounts using randomized names and added a non-admin account under my name "ngrady" using the organization's user account naming policy of first name's first letter followed by the full last name for all accounts: <br/>
  <img src="https://i.imgur.com/fvkdKKC.png"/> 
 <br />
 <br />
-Now that the server was all set up, I installed the Windows 11 virtual machine and used the command prompt to ensure connectivity, successfully connected to the default gateway (which is the IP of the Domain Controller) as well as being automatically assigned the IP 172.16.0.100 through the DHCP server: 
+Now that the server was all set up, I installed the Windows 11 virtual machine and used the command prompt to ensure connectivity, successfully connected to the default gateway (which is the IP of the Domain Controller) as well as being automatically assigned the IP 172.16.0.100 through the DHCP server:  <br/>
  <img src="https://i.imgur.com/Nn513gb.png"/> 
 <br />
 <br />
-Further testing, ensuring their is internet access using the Ping command successfully reaching google and ensuring the Windows 11 VM can reach the Domain by pinging it with "ping nick.grady":
+Further testing, ensuring their is internet access using the Ping command successfully reaching google and ensuring the Windows 11 VM can reach the Domain by pinging it with "ping nick.grady": <br/>
  <img src="https://i.imgur.com/FPCYEfE.png"/> 
 <br />
 <br />
-Opened System settings to change use the advanced name change feature to change the computer name to "Client1" and join the Domain of nick.grady: 
+Opened System settings used the system properties to change the computer name to "Client1" and join the Domain of nick.grady:  <br/>
  <img src="https://i.imgur.com/fan3Fze.png"/> 
 <br />
 <br />
-Moved back to the Microsoft Server 2022 VM to ensure the new "Client1" is showing up in the DHCP server: 
+Moved back to the Microsoft Server 2022 VM to ensure the new "Client1" is showing up in the DHCP server:  <br/>
  <img src="https://i.imgur.com/8WpoFwM.png"/> 
 <br />
 <br />
-Confirming the Windows 11 computer shows up in Active Directory: 
+Confirming the Windows 11 computer shows up in Active Directory:  <br/>
  <img src="https://i.imgur.com/QixgzYE.png"/> 
 <br />
 <br />
-Switching back to the Windows 11 VM with user ngrady logging in:
+Switching back to the Windows 11 VM with user ngrady logging in: <br/>
  <img src="https://i.imgur.com/a8zublO.png"/> 
 <br />
 <br />
-Success! Users are now able to use their credentials to log into Client1:
+Success! Confirmed in the command prompt with the 'whoami' command to show who is logged in.  Any user as long as they are a User in Active Directory can now log in with their own personal credentials: <br/>
  <img src="https://i.imgur.com/7XElkXY.png"/> 
 <br />
 <br />
