@@ -26,7 +26,7 @@ During the setup, I added a new forest and named my root domain name nick.grady:
 <img src="https://i.imgur.com/R73SarK.png"/> 
 <br />
 <br />
-After Active Directory Domain Service was successfully installed, I opened the Active Directory User and Computer and added in a new Organizational Unit for Admin accounts and added in a new user Nicholas Grady: <br/>
+After Active Directory Domain Service was successfully installed, I opened the Active Directory User and Computer and added in a new Organizational Unit for Admin accounts and added in a new user Nicholas Grady, using the organizations naming convention of "a-ngrady" for the account.  For the rest of the Lab I log out of the default domain admin account and log into a-ngrady as a best practice for security/auditing: <br/>
 <img src="https://i.imgur.com/pWKk9S9.png"/> 
 <br />
 <br />
